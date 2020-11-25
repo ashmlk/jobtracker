@@ -86,6 +86,19 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 $date = $row["date"];
                 $priority = $row["priority"];
                 $notes = $row["notes"];
+                $app_slc = $int_slc = $off_slc = $ref_slc = $dec_slc = '';
+                $t = $row['type'];
+                if($t == 'application'){
+                    $app_slc = 'selected';
+                } else if($t == 'interview'){
+                    $int_slc = 'selected';
+                } else if($t == 'offer'){
+                    $off_slc = 'selected';
+                } else if($t == 'rejected'){
+                    $ref_slc = 'selected';
+                } else if($t == 'declined'){
+                    $dec_slc = 'selected';
+                }
             } else{
                 header("location: registration/errors.php");
                 exit();
@@ -226,11 +239,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
                                 <label>Application Type</label>
                                 <select name="application-type" class="custom-select" id="inputGroupSelect01">
-                                    <option selected value="application">Application</option>
-                                    <option value="interview">Interview</option>
-                                    <option value="declined">Declined</option>
-                                    <option value="offer">Offer</option>
-                                    <option value="rejected">Rejected</option>                                   
+                                    <option <?php echo $app_slc; ?> value="application">Application</option>
+                                    <option <?php echo $int_slc; ?> value="interview">Interview</option>
+                                    <option <?php echo $dec_slc; ?> value="declined">Declined</option>
+                                    <option <?php echo $off_slc; ?> value="offer">Offer</option>
+                                    <option <?php echo $rej_slc; ?> value="rejected">Rejected</option>                                   
                                 </select>
                                 <span class="help-block"><?php echo $position_err;?></span>
                             </div>
