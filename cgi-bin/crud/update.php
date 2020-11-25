@@ -58,7 +58,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
 
 
-    $notes = trim($_POST["notes"]);
+    $notes = addslashes(htmlspecialchars(trim($_POST["notes"])));
     $priority = (int)trim($_POST["priority"]);
     $id = ($_POST["id"]);
     if(empty($title_err) && empty($company_err) && empty($type_err) && empty($date_err)){
@@ -95,7 +95,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
         mysqli_close($link);
     }  else{
-        header("location: registration/errors.php");
+        header("location: ../registration/errors.php");
         exit();
     }
 }

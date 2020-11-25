@@ -12,4 +12,11 @@ $(document).ready(function () {
               $(this).closest('li').addClass('active')
               }
         });
+        $( ".responsive-menu-list div > a" ).each(function() {
+            var ThisUrl = $(this).attr('href');
+            var ThisUrlEnd = ThisUrl.split('/').filter(Boolean).pop();
+            if(ThisUrlEnd == CurrentUrlEnd){
+            $(this).closest('.border-rounded').addClass('bg-primary');
+            }
+      });
 })
