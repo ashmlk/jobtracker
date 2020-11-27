@@ -36,7 +36,7 @@
 			
 			<div class="col-sm-3 bordered text-center border-left">
 				<p>GO TO</p>
-				<p> <a href="" class="text-secondary">Home</a></p>
+				<p> <a href="base.php" class="text-secondary">Home</a></p>
 				<p> <a href="about.html" class="text-secondary">About</a></p>
 				<p> <a href="contact.html" class="text-secondary">Contact</a></p>
 			</div>
@@ -46,7 +46,7 @@
 				<div class = "pb-0">
 				<p> <a href="https://github.com/ashmlk" class="text-secondary">Arshia Malek</a></p>
 				<p> <a href="https://github.com/wtianchi" class="text-secondary">Tianchi Wu</a></p>
-				<p> <a href="https://github.com/ssaseun" class="text-secondary">Alex</a></p>
+				<p> <a href="https://github.com/ssaseun" class="text-secondary">Shing Sung Alexander Seun</a></p>
 				<p> <a href="https://github.com/saif-alvi" class="text-secondary">Saif Alvi</a></p>
 				</div>
 			</div>
