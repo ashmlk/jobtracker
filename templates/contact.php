@@ -1,4 +1,9 @@
 <?php
+/*CREATE TABLE `contact` (
+    `id` int(16) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `email` varchar(255) NOT NULL,
+    `message` TEXT
+);*/
 session_start();
 require_once "config.php";
 $query = "INSERT INTO contact (email, message) VALUES ('" . $_POST["email"] . "','" . $_POST["message"] . "')";
