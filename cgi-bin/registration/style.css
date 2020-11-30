@@ -14,9 +14,17 @@ html, body {
     padding: 30px;
     border-radius: 50px;
     box-shadow: 0 0 10px black;
-	transition: ease all 0.25s;
+    transition: ease all 0.25s;
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+    
 }
 
+
+#signup-register footer {
+    min-height: 100vh;
+    background-color: white !important; 
+}
 select {
 	height: 20px;
 	width: 50px;
