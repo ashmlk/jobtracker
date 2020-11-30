@@ -4,7 +4,9 @@ html, body {
 	text-align: center;
     background-color: #343a40 !important;
     background-size: cover;
+    min-height: 100vh !important;
 }
+
 
 #main {
 	height: auto;
@@ -15,15 +17,15 @@ html, body {
     border-radius: 50px;
     box-shadow: 0 0 10px black;
     transition: ease all 0.25s;
-    margin-top: 5rem !important;
-    margin-bottom: 5rem !important;
     
 }
+#full-vh {
+    min-height: 100vh !important;
+}
+#lr footer {
 
-
-#signup-register footer {
-    min-height: 100vh;
-    background-color: white !important; 
+    background-color: white !important;
+    bottom:0 !important; 
 }
 select {
 	height: 20px;
