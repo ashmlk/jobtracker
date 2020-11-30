@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="bg-dark">
+<body >
     <div class="container" style="min-height:100vh !important;">
         <div class="vg-white border-transparent card p-3" style="margin-top:15rem !important;">
             <div class="col-md-4 my-auto mx-auto text-center">
@@ -55,6 +55,7 @@
         </div>
 
     </div>
+    <?php include '../global/footer.php';?>
 </body>
 
 </html>

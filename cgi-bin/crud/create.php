@@ -91,10 +91,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="../../assets/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="min-height:100vh !important;">
     <?php  if (isset($_SESSION['username'])) : ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="base.php">Dashboard</a>
+        <a class="navbar-brand" href="base.php"><span class="mx-1"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+</svg></span>Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -102,15 +104,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a href="base.php?logout='1'">Logout</a>
+                    <a href="base.php?logout='1'"><span class="mx-1"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                        </svg><span>Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="container" style="min-height:100vh !important;">
         <div class="row">
         <div class="col-md-3 p-2 mt-3 d-none d-md-block">
-        <ul class="list-group">
+        <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <span class="mx-2">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -231,12 +236,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </div>
     </div>
-    <script>
-         $(function() {
-            $("#datepicker").datepicker({dateFormat: 'yy-mm-dd' });
-         });
-      </script>
     <?php endif ?>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({dateFormat: 'yy-mm-dd' });
+        })
+        </script>
 </body>
-
+<?php include '../global/footer.php';?>
 </html>

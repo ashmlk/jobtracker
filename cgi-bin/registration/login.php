@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="bg-dark">
+<body>
     <div class="container" style="min-height:100vh !important;">
-        <div class="vg-white border-transparent card p-3" style="margin-top:15rem !important;">
+        <div class="bg-white border-transparent card p-3" style="margin-top:15rem !important;">
             <div class="col-md-4 my-auto mx-auto text-center">
                 <div class="border-bottom mb-2 pb-1  header">
                     <h4 class="text-dark text-center">
@@ -43,8 +43,7 @@
                 </div>
             </div>
         </div>
-
-    </div>
+    </div> 
 </body>
-
+<?php include '../global/footer.php';?>
 </html>
