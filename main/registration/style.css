@@ -76,8 +76,17 @@ input[type="password"] {
 	border: 1px solid lightgrey;
 }
 
-@media screen and (max-width: 615px) {
+@media (min-width: 616px) and (max-width: 1024px) {
     #main {
-        width: 450px;
+        zoom: 200%;
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 615px) {
+    #main {
+        width: auto;
+        margin: 0 auto;
     }
 }
