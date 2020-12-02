@@ -147,6 +147,11 @@ function test_input($data) {
 </head>
 <body id="lr">
     <div id="full-vh">
+    <div class="text-white d-flex justify-content-center" style="margin:4rem;">
+    <div>
+    <h1 class='text-white display-4' style="color:white !important;font-size:5rem;">JTracker</h1>
+    </div>
+    </div>
     <div id="main">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
