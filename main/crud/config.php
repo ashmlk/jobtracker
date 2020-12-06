@@ -1,5 +1,5 @@
 <?php
-
+// default MySQL configuration for all files
 $link = mysqli_connect('localhost:3306', 'root', 'password', 'arshia');
  
 // Check connection

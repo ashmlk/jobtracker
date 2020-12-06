@@ -215,14 +215,14 @@
                 <div class="col-md-9 p-2 pt-3">
                 <?php
                     require_once "config.php";
-                    $type_name = 'application';
+                    $type_name = 'application'; // default type of application id GET request was empty
                     $username = $_SESSION['username'];
                     $sql = "SELECT * FROM applications WHERE type='application' and user_username='$username' order by 'date' ";
                     if(!empty(trim($_GET["company"])) && empty(trim($_GET["type"]))){
                         $company_name = trim($_GET["company"]);
                         $sql = "SELECT * FROM applications WHERE type='application' and user_username='$username' and company='$company_name' order by 'date' ";
-                        $url = 'https://autocomplete.clearbit.com/v1/companies/suggest?query='. $company_name .'';
-                        $obj = json_decode(file_get_contents($url), true);
+                        $url = 'https://autocomplete.clearbit.com/v1/companies/suggest?query='. $company_name .''; // Clearbit API to get the logo of company if company was present in GET request
+                        $obj = json_decode(file_get_contents($url), true); // decode the JSON file returned
                         $logo_url =  $obj[0]['logo'];
                         echo '
                         <div class="mt-2 mx-2 border-bottom mb-1 pb-2 d-flex justify-content-start p-2 align-items-center bg-company">
@@ -235,7 +235,8 @@
                         </div>
                         ';
                     }
-                    if(!empty(trim($_GET["type"])) && empty(trim($_GET["company"]))){
+                    if(!empty(trim($_GET["type"])) && empty(trim($_GET["company"]))){ 
+                        // if the application type was empty in GET request and company was present only filter based on company (Show all applications)
                         $type_name = trim($_GET["type"]);
                         if($type_name != 'all'){
                             $sql = "SELECT * FROM applications WHERE type='$type_name' and user_username='$username' order by 'date' ";
@@ -245,14 +246,14 @@
                        
                         $type_name = trim($_GET["type"]);
                         $company_name = trim($_GET["company"]);
-                        if($type_name != 'all'){ 
+                        if($type_name != 'all'){  // if the type was all return all types of application otherwise return type=TYPE
                             $sql = "SELECT * FROM applications WHERE type='$type_name' and user_username='$username' and company='$company_name' order by 'date' ";
                         } else {
                             $sql = "SELECT * FROM applications WHERE user_username='$username' and company='$company_name' order by 'date' ";
                         }                       
                         $url = 'https://autocomplete.clearbit.com/v1/companies/suggest?query='. $company_name .'';
                         $obj = json_decode(file_get_contents($url), true);
-                        $logo_url =  $obj[0]['logo'];
+                        $logo_url =  $obj[0]['logo']; // based on application type return a helper text to HTML
                         if($type_name == 'application') {
                             $application_text = 'Applied Applications';
                         } else if($type_name == 'offer') {

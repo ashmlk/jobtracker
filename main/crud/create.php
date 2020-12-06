@@ -22,12 +22,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_title = trim($_POST["title"]);
     if(empty($input_title)){
         $title_err = "Enter the position which you applied for.";
-    } elseif(!filter_var($input_title, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+    } elseif(!filter_var($input_title, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){ // regex to check for correct position
         $title_err = "Please enter a valid position (Alphabetical letters).";
     } else{
         $title = $input_title;
     }
-
+    // display errors if input is wrong
     $input_company = trim($_POST["company"]);
     if(empty($input_company)){
         $company_err = "Enter the company which you are applying for.";     
@@ -57,9 +57,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
 
-
+    // notes and priority are not required so they have no error checking
     $notes = trim($_POST["notes"]);
-    $priority = (int)trim($_POST["priority"]);
+    $priority = (int)trim($_POST["priority"]); // convert priority to int
   
     if(empty($title_err) && empty($company_err) && empty($type_err) && empty($date_err)){
         $sql = "INSERT INTO applications (position, company, type, date, notes, Priority, user_username) VALUES ('$title', '$company', '$type', '$date', '$notes', '$priority', '$username')";           

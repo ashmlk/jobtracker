@@ -12,7 +12,7 @@ if (isset($_GET['logout'])) {
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     require_once "config.php";
     $id = trim($_POST["id"]);
-    $sql = "DELETE FROM applications WHERE id = '$id'";
+    $sql = "DELETE FROM applications WHERE id = '$id'"; // delete application based on id
     if (!mysqli_query($link, $sql)) {
         echo("Error description: " . mysqli_error($link));
     }
