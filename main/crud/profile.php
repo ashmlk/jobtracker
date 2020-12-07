@@ -16,7 +16,7 @@ $username = $_SESSION['username'];
 $sql = "SELECT COUNT(*) as total FROM applications WHERE user_username='$username'";
 $result = mysqli_query($link, $sql);
 $data= mysqli_fetch_assoc($result);
-$total_apps = $data['total'];
+$total_apps = $data['total']; // this is to get the total number of applications for user
 
 ?>
 
@@ -80,9 +80,6 @@ $total_apps = $data['total'];
                         </div>
                         <div class="mt-3 d-flex justify-content-center">
                             <div>
-                                <div class="my-1">
-                                <a class="btn btn-lg btn-primary my-2 w-100" href="#">Edit Profile</a>
-                                </div>
                                 <div class="my-1">
                                 <a class="btn btn-lg btn-primary my-2 w-100" href="../registration/reset-password.php">Reset Password</a>
                                 </div>                      
